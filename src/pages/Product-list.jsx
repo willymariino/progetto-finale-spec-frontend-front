@@ -76,6 +76,9 @@ function ProductList() {
                 </select>
             </section>
 
+            {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
+
+
             {products.map(product => (
                 <ProductCard key={product.id} product={product} />
             ))}
