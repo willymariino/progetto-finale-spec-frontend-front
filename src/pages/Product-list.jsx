@@ -46,7 +46,7 @@ function ProductList() {
                 <label htmlFor="search-bar">cerca il prodotto</label>
                 <input
                     type="text"
-                    name="search-bar"
+                    id="search-bar"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="cerca il prodotto"
@@ -59,7 +59,7 @@ function ProductList() {
                 <select
                     value={category}
                     onChange={e => setCategory(e.target.value)}
-                    name='category'
+                    id='category'
                 >
                     <option value=""> scegli la categoria</option>
                     <option value="laptop">laptop</option>
