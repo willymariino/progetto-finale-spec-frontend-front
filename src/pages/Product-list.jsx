@@ -48,7 +48,7 @@ function ProductList() {
                     type="text"
                     id="search-bar"
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={e => setQuery(e.target.value)}
                     placeholder="cerca il prodotto"
                 />
 
@@ -67,8 +67,18 @@ function ProductList() {
                     <option value="smartphone">smartphone</option>
                     <option value="microcomputer">microcomputer</option>
                     <option value="gaming">gaming</option>
+                    <option value="tablet">tablet</option>
+                    <option value="wearable">wearable</option>
+                    <option value="monitor">monitor</option>
+                    <option value="networking">networking</option>
+                    <option value="audio">audio</option>
+                    <option value="storage">storage</option>
                 </select>
             </section>
+
+            {products.map(product => (
+                <productCard key={product.id} product={product} />
+            ))}
 
         </>
     )
