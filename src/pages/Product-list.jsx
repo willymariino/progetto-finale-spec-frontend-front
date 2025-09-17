@@ -1,4 +1,4 @@
-import productCard from "../components/ProductCard"
+import ProductCard from "../components/ProductCard"
 import { useState, useEffect } from "react"
 import axios from "axios"
 
@@ -77,7 +77,7 @@ function ProductList() {
             </section>
 
             {products.map(product => (
-                <productCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} />
             ))}
 
         </>

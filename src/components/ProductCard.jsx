@@ -1,4 +1,4 @@
-function productCard() {
+function ProductCard(product) {
 
     return (
         <>
@@ -7,4 +7,4 @@ function productCard() {
     )
 }
 
-export default productCard
+export default ProductCard
