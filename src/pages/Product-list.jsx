@@ -39,6 +39,37 @@ function ProductList() {
     return (
         <>
 
+            <h1>prodotti disponibili</h1>
+
+            <section>
+
+                <label htmlFor="search-bar">cerca il prodotto</label>
+                <input
+                    type="text"
+                    name="search-bar"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="cerca il prodotto"
+                />
+
+            </section>
+
+            <section>
+                <label htmlFor="category">filtra per categoria</label>
+                <select
+                    value={category}
+                    onChange={e => setCategory(e.target.value)}
+                    name='category'
+                >
+                    <option value=""> scegli la categoria</option>
+                    <option value="laptop">laptop</option>
+                    <option value="desktop">desktop</option>
+                    <option value="smartphone">smartphone</option>
+                    <option value="microcomputer">microcomputer</option>
+                    <option value="gaming">gaming</option>
+                </select>
+            </section>
+
         </>
     )
 }
