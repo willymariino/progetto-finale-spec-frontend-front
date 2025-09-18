@@ -1,6 +1,7 @@
 import ProductCard from "../components/ProductCard"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 async function fetchProducts(query, category, setProducts) {
     // verifico i parametri ricevuti dalla chiamata per debug
@@ -78,10 +79,17 @@ function ProductList() {
 
             {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
 
+            <ul className="product-list">
 
-            {products.map(product => (
-                <ProductCard key={product.id} product={product} />
-            ))}
+                {products.map(product => (
+                    <li key={product.id} className="product-card">
+                        <Link to={`/product-detail/${product.id}`}>
+                            <ProductCard product={product} />
+                        </Link>
+                    </li>
+                ))}
+
+            </ul>
 
         </>
     )

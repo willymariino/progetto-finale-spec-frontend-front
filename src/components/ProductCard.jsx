@@ -7,9 +7,15 @@ function ProductCard({ product }) {
     return (
         <>
 
-            <p>{product.title}</p>
-            <p>category:{product.category}</p>
-            <p>price: {product.price}</p>
+            <div className="product-card">
+
+                <p>{product.title}</p>
+                <p>category:{product.category}</p>
+                <p>price: {product.price}</p>
+
+                <span className="separator">  ---------- </span>
+
+            </div>
 
         </>
     )
