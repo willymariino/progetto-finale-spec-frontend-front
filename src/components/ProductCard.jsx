@@ -7,7 +7,7 @@ function ProductCard({ product }) {
     return (
         <>
 
-            <div className="product-card">
+            <div>
 
                 <p>{product.title}</p>
                 <p>category:{product.category}</p>
