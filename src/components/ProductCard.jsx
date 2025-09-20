@@ -13,8 +13,6 @@ function ProductCard({ product }) {
                 <p>category:{product.category}</p>
                 <p>price: {product.price}</p>
 
-                <span className="separator">  ---------- </span>
-
             </div>
 
         </>
