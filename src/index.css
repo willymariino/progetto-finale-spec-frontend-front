@@ -2,9 +2,9 @@
     background-color: #f0f0f0;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translate(0, -10px);
-    display: flex;
+    transform: translateY(-10px);
     gap: 6%;
+    z-index: 10;
 }
 
 .product-card {
@@ -12,8 +12,8 @@
         transform 0.4s ease-in-out,
         background-color 0.4s ease-in-out,
         box-shadow 0.4s ease-in-out,
-        border-radius 0.4s ease-in-out,
-        padding 0.4s ease-in-out;
+        border-radius 0.4s ease-in-out;
+
     border: 1px solid rgba(69, 69, 68, 0.371);
     border-radius: 20px;
     max-width: 250px;
