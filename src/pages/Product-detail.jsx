@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 
-async function getProductDetail(id, setProduct, setLoading) {
+async function getProductDetail(id, setCurrentItem, setLoading) {
 
     try {
         const res = await axios.get(`http://localhost:3001/products/${id}`)
-        setProduct(res.data.product)
+        setCurrentItem(res.data.product)
         setLoading(false)
         console.log("oggetto completo", res.data)
         console.log("solamente oggetto product", res.data.product)
@@ -23,13 +23,13 @@ async function getProductDetail(id, setProduct, setLoading) {
 
 function ProductDetail() {
 
-    const [product, setProduct] = useState(null)
+    const [currentItem, setCurrentItem] = useState(null)
     const [loading, setLoading] = useState(true)
     const { id } = useParams()
 
 
     useEffect(() => {
-        getProductDetail(id, setProduct, setLoading)
+        getProductDetail(id, setCurrentItem, setLoading)
     }, [id])
 
     if (loading) {
@@ -42,7 +42,7 @@ function ProductDetail() {
     return (
         <>
 
-            <h1>{product.title}</h1>
+            <h1>{currentItem.title}</h1>
 
 
         </>
