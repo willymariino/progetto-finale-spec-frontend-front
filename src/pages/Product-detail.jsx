@@ -5,7 +5,7 @@ import axios from "axios"
 async function getProductDetail(slug, setCurrentItem, setLoading) {
 
     try {
-        const res = await axios.get(`http://localhost:3001/products/${slug}`)
+        const res = await axios.get(`http://localhost:3001/products/slug/${slug}`)
         setCurrentItem(res.data.product)
         setLoading(false)
         console.log("oggetto completo", res.data)
@@ -30,7 +30,9 @@ function ProductDetail() {
 
 
     useEffect(() => {
-        getProductDetail(slug, setCurrentItem, setLoading)
+        if (slug) {
+            getProductDetail(slug, setCurrentItem, setLoading)
+        }
     }, [slug])
 
     if (loading) {

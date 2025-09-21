@@ -12,7 +12,7 @@ function App() {
 
         <Route path="" index Component={ProductList} />
         <Route path="/Product-List" Component={ProductList} />
-        <Route path="/product-detail/:slug" Component={ProductDetail} />
+        <Route path="/product-detail/slug/:slug" Component={ProductDetail} />
 
       </Routes>
 

@@ -87,7 +87,7 @@ function ProductList() {
 
                 {products.map(product => (
                     <li key={product.id} className="product-card">
-                        <Link to={`/product-detail/${product.id}`}>
+                        <Link to={`/product-detail/slug/${product.slug}`}>
                             <ProductCard product={product} />
                         </Link>
                     </li>
