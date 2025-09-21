@@ -42,40 +42,44 @@ function ProductList() {
 
             <h1>prodotti disponibili</h1>
 
-            <section>
+            <div className="search-inputs">
 
-                <label htmlFor="search-bar">cerca il prodotto</label>
-                <input
-                    type="text"
-                    id="search-bar"
-                    value={query}
-                    onChange={e => setQuery(e.target.value)}
-                    placeholder="cerca il prodotto"
-                />
+                <section className="search-bar">
 
-            </section>
+                    <label htmlFor="search-bar">cerca il prodotto</label>
+                    <input
+                        type="text"
+                        id="search-bar"
+                        value={query}
+                        onChange={e => setQuery(e.target.value)}
+                        placeholder="cerca il prodotto"
+                    />
 
-            <section>
-                <label htmlFor="category">filtra per categoria</label>
-                <select
-                    value={category}
-                    onChange={e => setCategory(e.target.value)}
-                    id='category'
-                >
-                    <option value=""> scegli la categoria</option>
-                    <option value="laptop">laptop</option>
-                    <option value="desktop">desktop</option>
-                    <option value="smartphone">smartphone</option>
-                    <option value="microcomputer">microcomputer</option>
-                    <option value="gaming">gaming</option>
-                    <option value="tablet">tablet</option>
-                    <option value="wearable">wearable</option>
-                    <option value="monitor">monitor</option>
-                    <option value="networking">networking</option>
-                    <option value="audio">audio</option>
-                    <option value="storage">storage</option>
-                </select>
-            </section>
+                </section>
+
+                <section className="select-category">
+                    <label htmlFor="category">filtra per categoria</label>
+                    <select
+                        value={category}
+                        onChange={e => setCategory(e.target.value)}
+                        id='category'
+                    >
+                        <option value=""> scegli la categoria</option>
+                        <option value="laptop">laptop</option>
+                        <option value="desktop">desktop</option>
+                        <option value="smartphone">smartphone</option>
+                        <option value="microcomputer">microcomputer</option>
+                        <option value="gaming">gaming</option>
+                        <option value="tablet">tablet</option>
+                        <option value="wearable">wearable</option>
+                        <option value="monitor">monitor</option>
+                        <option value="networking">networking</option>
+                        <option value="audio">audio</option>
+                        <option value="storage">storage</option>
+                    </select>
+                </section>
+
+            </div>
 
             {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
 
