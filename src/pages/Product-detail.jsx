@@ -44,6 +44,42 @@ function ProductDetail() {
 
             <h1>{currentItem.title}</h1>
 
+            <p>Category: {currentItem.category}</p>
+
+            <section>
+
+                <h2>Specifications:</h2>
+
+                <p>Internal memory: {currentItem.internal_memory}</p>
+                <p>RAM: {currentItem.ram}</p>
+                <p>CPU: {currentItem.cpu}</p>
+                <p>GPU: {currentItem.gpu}</p>
+                <p>Cooling: {currentItem.cooling || "Not present"}</p>
+
+            </section>
+
+            <section>
+
+                <h2>Description</h2>
+
+                <p>{currentItem.description}</p>
+
+
+                Optionals:
+
+                <ul>
+
+                    {currentItem.optionals.map((item, index) => (
+                        <li key={index}>
+                            {item}
+                        </li>
+                    ))}
+
+                </ul>
+
+
+
+            </section>
 
         </>
     )
