@@ -7,7 +7,9 @@ function ProductCard({ product }) {
 
     const [isBookMarked, setIsBookMarked] = useState(false)
 
-    const handleBookmark = () => {
+    const handleBookmark = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
         setIsBookMarked(!isBookMarked)
     }
 
