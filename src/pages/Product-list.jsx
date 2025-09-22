@@ -38,9 +38,15 @@ function ProductList() {
     }, [query, category])
 
     return (
-        <>
+        <main>
 
-            <h1>prodotti disponibili</h1>
+            <section className="title-section">
+
+                <h1>prodotti disponibili</h1>
+
+            </section>
+
+
 
             <div className="search-inputs">
 
@@ -95,7 +101,7 @@ function ProductList() {
 
             </ul>
 
-        </>
+        </main>
     )
 }
 
