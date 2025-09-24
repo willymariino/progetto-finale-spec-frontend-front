@@ -3,18 +3,21 @@ import { FaComputer } from "react-icons/fa6";
 import { FaLaptopCode } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Header() {
 
     return (
+
         <header>
 
-            <h1 className="Header-title"> <FaComputer />  TechZone <FaLaptopCode /> </h1>
+            <Link to={"/Product-list"}>
+                <h1 className="Header-title"> <FaComputer />  TechZone <FaLaptopCode /> </h1>
+            </Link>
 
             <nav>
                 <NavLink to="/WishList" className="nav-link"> <CiBookmark />  Wish List </NavLink>
                 <NavLink to="/ShoppingCart" className="nav-link"> <FaCartShopping /> Shopping Cart </NavLink>
-
             </nav>
 
 

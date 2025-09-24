@@ -1,27 +1,37 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ProductList from "./pages/product-list"
 import ProductDetail from "./pages/Product-detail"
+import WishList from "./pages/WishList"
+import ShoppingCart from "./pages/ShoppingCart"
 import DefaultLayout from "./Layouts/DefaultLayout"
+import GlobalContextProvider from "./components/GlobalContextProvider"
 
 function App() {
 
 
   return (
-    <BrowserRouter>
 
-      <Routes>
+    <GlobalContextProvider>
 
-        <Route Component={DefaultLayout}>
+      <BrowserRouter>
 
-          <Route path="" index Component={ProductList} />
-          <Route path="/Product-List" Component={ProductList} />
-          <Route path="/product-detail/slug/:slug" Component={ProductDetail} />
+        <Routes>
 
-        </Route>
+          <Route Component={DefaultLayout}>
 
-      </Routes>
+            <Route path="" index Component={ProductList} />
+            <Route path="/Product-List" Component={ProductList} />
+            <Route path="/product-detail/slug/:slug" Component={ProductDetail} />
+            <Route path="/ShoppingCart" Component={ShoppingCart} />
+            <Route path="/WishList" Component={WishList} />
 
-    </BrowserRouter>
+          </Route>
+
+        </Routes>
+
+      </BrowserRouter>
+
+    </GlobalContextProvider>
   )
 }
 

@@ -129,6 +129,11 @@ header {
     letter-spacing: 2px;
 }
 
+header a {
+    color: white;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 480px) {
     .product-list {
         grid-template-columns: 1fr;

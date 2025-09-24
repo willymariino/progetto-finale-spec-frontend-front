@@ -18,9 +18,9 @@ function GlobalContextProvider({ children }) {
     }
 
     return (
-        <GlobalContext.provider value={{ favorite, toggleFavourite }}>
+        <GlobalContext.Provider value={{ favorite, toggleFavourite }}>
             {children}
-        </GlobalContext.provider>
+        </GlobalContext.Provider>
     )
 }
 
