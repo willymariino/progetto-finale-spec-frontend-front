@@ -96,6 +96,11 @@ nav {
 .nav-link {
     text-decoration: none;
     color: inherit;
+    vertical-align: middle;
+}
+
+.nav-link svg {
+    vertical-align: middle;
 }
 
 .nav-link:hover {

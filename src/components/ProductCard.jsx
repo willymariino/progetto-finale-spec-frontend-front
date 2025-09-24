@@ -7,12 +7,21 @@ function ProductCard({ product }) {
 
     const [isBookMarked, setIsBookMarked] = useState(false)
 
-    const handleBookmark = (e) => {
-        e.stopPropagation()
-        e.preventDefault()
-        setIsBookMarked(!isBookMarked)
-    }
 
+    const handleBookmark = (e) => {
+        // Blocca la propagazione dell'evento verso i genitori.
+        // Serve perché il click sul bottone non deve attivare il Link della card.
+        e.stopPropagation()
+
+        // Previene il comportamento di default dell'evento.
+        //  necessario, se il bottone è dentro un form o un link.
+        e.preventDefault()
+
+        // Metodo consigliato quando lo stato dipende dal valore precedente.
+        // React passa automaticamente il valore più aggiornato dello stato come 'prev'.
+        setIsBookMarked(prev => !prev)
+        // setIsBookMarked(!isBookMarked) legge direttamente lo stato attuale e lo inverte; più semplice, ma rischioso se ci sono aggiornamenti asincroni o rapidi.
+    }
 
     // console.log("title:", product.title)
     // console.log("category:", product.category)
