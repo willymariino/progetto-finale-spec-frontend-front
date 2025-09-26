@@ -49,6 +49,8 @@ function ProductDetail() {
 
             <p>Category: {currentItem.category}</p>
 
+
+
             <section>
 
                 <h2>Specifications:</h2>

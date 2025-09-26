@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CiBookmark } from "react-icons/ci";
 import { MdOutlineCompare } from "react-icons/md";
 import { FaBookmark } from "react-icons/fa";
+import GlobalContext from "../context/GlobalContext";
 
 function ProductCard({ product }) {
 
     const [isBookMarked, setIsBookMarked] = useState(false)
-
+    const { toggleFavorite } = useContext(GlobalContext)
 
     const handleBookmark = (e) => {
         // Blocca la propagazione dell'evento verso i genitori.
@@ -20,7 +21,9 @@ function ProductCard({ product }) {
         // Metodo consigliato quando lo stato dipende dal valore precedente.
         // React passa automaticamente il valore più aggiornato dello stato come 'prev'.
         setIsBookMarked(prev => !prev)
-        // setIsBookMarked(!isBookMarked) legge direttamente lo stato attuale e lo inverte; più semplice, ma rischioso se ci sono aggiornamenti asincroni o rapidi.
+        // usare invece: setIsBookMarked(!isBookMarked) legge direttamente lo stato attuale e lo inverte; più semplice, ma rischioso se ci sono aggiornamenti asincroni o rapidi.
+
+        toggleFavorite(product) //aggiorna il contesto globale
     }
 
     // console.log("title:", product.title)
