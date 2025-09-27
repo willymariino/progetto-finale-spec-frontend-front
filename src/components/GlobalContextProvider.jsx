@@ -2,12 +2,13 @@ import { useState } from "react";
 import GlobalContext from "../context/GlobalContext";
 
 function GlobalContextProvider({ children }) {
-    const [favorite, setFavorite] = useState([])
+    const [favorites, setFavorites] = useState([])
 
     function toggleFavorite(product) {
 
         console.log("Aggiungo/rimuovo:", product)
-        setFavorite(prev => {
+
+        setFavorites(prev => {
 
             if (prev.some(p => p.id === product.id)) { // verifico se il prodotto è già presente
                 return prev.filter(p => p.id !== product.id) // se lo è, al click viene ricreato un nuovo array con quel prodotto filtrato fuori
@@ -20,7 +21,7 @@ function GlobalContextProvider({ children }) {
     }
 
     return (
-        <GlobalContext.Provider value={{ favorite, toggleFavorite }}>
+        <GlobalContext.Provider value={{ favorites, toggleFavorite }}>
             {children}
         </GlobalContext.Provider>
     )

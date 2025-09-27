@@ -4,14 +4,14 @@ import ProductCard from "../components/ProductCard"
 
 function WishList() {
 
-    const { favorite } = useContext(GlobalContext)
-    console.log("Favorites attuali:", favorite)
+    const { favorites } = useContext(GlobalContext)
+    console.log("Favorites attuali:", favorites)
 
 
     return (
         <>
             <ul className="product-list">
-                {favorite.map(favorite =>
+                {favorites.map(favorite =>
                     <li key={favorite.id} className="product-card">
                         <ProductCard product={favorite} />
                     </li>
